@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="PositiveTestsSuite" verbose="1">
+    <listeners>
+        <listener class-name="com.hotline.tests.listeners.TestListener"></listener>
+    </listeners>
+    <test name="Hotline Positive Tests">
+        <groups>
+            <run>
+                <include name="positive"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.hotline.tests.scenarios.PositiveTestsOne"/>
+            <class name="com.hotline.tests.scenarios.PositiveTestsTwo"/>
+            <class name="com.hotline.tests.scenarios.NegativeTests"/>
+        </classes>
+    </test>
+</suite>
