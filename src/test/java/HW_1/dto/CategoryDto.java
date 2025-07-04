@@ -1,25 +1,15 @@
-package hw_1.dto;
-
-import java.util.Objects;
+package HW_1.dto;
 
 public class CategoryDto {
-    private long id;
+
+    private int id;
     private String name;
 
-    public CategoryDto() {
-    }
-
-    public CategoryDto(long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    // Getters and Setters
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -32,22 +22,8 @@ public class CategoryDto {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CategoryDto category = (CategoryDto) o;
-        return id == category.id &&
-                Objects.equals(name, category.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name);
-    }
-
-    @Override
     public String toString() {
-        return "CategoryDto{" +
+        return "Category{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

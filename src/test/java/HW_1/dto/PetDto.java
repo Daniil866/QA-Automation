@@ -1,34 +1,21 @@
-package hw_1.dto;
+package HW_1.dto;
 
 import java.util.List;
-import java.util.Objects;
 
 public class PetDto {
-    private long id;
+
+    private int id;
     private CategoryDto category;
     private String name;
     private List<String> photoUrls;
     private List<TagDto> tags;
     private String status;
 
-    public PetDto() {
-    }
-
-    public PetDto(long id, CategoryDto category, String name, List<String> photoUrls, List<TagDto> tags, String status) {
-        this.id = id;
-        this.category = category;
-        this.name = name;
-        this.photoUrls = photoUrls;
-        this.tags = tags;
-        this.status = status;
-    }
-
-    // Getters and Setters
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -70,24 +57,6 @@ public class PetDto {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        PetDto pet = (PetDto) o;
-        return id == pet.id &&
-                Objects.equals(category, pet.category) &&
-                Objects.equals(name, pet.name) &&
-                Objects.equals(photoUrls, pet.photoUrls) &&
-                Objects.equals(tags, pet.tags) &&
-                Objects.equals(status, pet.status);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, category, name, photoUrls, tags, status);
     }
 
     @Override

@@ -1,25 +1,15 @@
-package hw_1.dto;
-
-import java.util.Objects;
+package HW_1.dto;
 
 public class TagDto {
-    private long id;
+
+    private int id;
     private String name;
 
-    public TagDto() {
-    }
-
-    public TagDto(long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    // Getters and Setters
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -29,20 +19,6 @@ public class TagDto {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        TagDto tag = (TagDto) o;
-        return id == tag.id &&
-                Objects.equals(name, tag.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name);
     }
 
     @Override
