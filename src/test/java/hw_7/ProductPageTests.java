@@ -14,7 +14,7 @@ public class ProductPageTests extends BaseTest {
 
     @Test
     public void verifyUserIsNavigatedToTheCorrectPage() throws InterruptedException {
-        String wordToSearch = "iPad";
+        String wordToSearch = "Apple";
         int thirdProduct = 3;
 
         HomePage homePage = new HomePage(getDriver());
