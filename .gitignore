@@ -1,4 +1,4 @@
-target/
+hw_7hw_7target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
