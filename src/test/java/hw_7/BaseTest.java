@@ -1,31 +1,34 @@
-package com.hotline.tests.base;
+package hw_7;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
+import io.github.bonigarcia.wdm.WebDriverManager;
 import java.time.Duration;
 
 public class BaseTest {
 
-    protected WebDriver driver;
-    private final String BASE_URL = "https://hotline.ua/";
+    private WebDriver driver;
 
     @BeforeMethod
-    public void setup() {
+    public void driverInit() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); // Неявное ожидание
-        driver.get(BASE_URL);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.get("https://hotline.ua/");
     }
 
     @AfterMethod
-    public void tearDown() {
+    public void quitDriver() {
         if (driver != null) {
             driver.quit();
         }
     }
+
+    protected WebDriver getDriver() {
+        return driver;
+    }
+
 }
