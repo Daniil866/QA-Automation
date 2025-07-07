@@ -10,7 +10,7 @@ public class ProductPageTest extends BaseTest {
 
     @Test
     public void verifyUserIsNavigatedToTheCorrectPage() {
-        String wordToFind = "iPhone";
+        String wordToFind = "Apple MacBook";
         int productToNavigate = 3;
 
         HomePage homePage = new HomePage();
