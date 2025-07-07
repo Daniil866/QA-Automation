@@ -1,4 +1,4 @@
-package hw_2;
+package hw_3;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
