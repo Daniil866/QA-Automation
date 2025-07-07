@@ -8,13 +8,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static java.lang.Thread.sleep;
 
-public class Test1 {
+public class Test6 {
 
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
 
         try {
-            String keyWordToFind = "iPhone";
+
+            String keyWordToFind = "Huawei Watch Fit 2 Sakura Pink ";
 
             driver.manage().window().maximize();
             driver.get("https://rozetka.com.ua/");
