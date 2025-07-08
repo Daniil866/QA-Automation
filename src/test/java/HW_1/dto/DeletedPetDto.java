@@ -1,15 +1,10 @@
-package dtos;
+package HW_1.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+public class DeletedPetDto {
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class ApiResponse {
     private int code;
     private String type;
     private String message;
-
-    public ApiResponse() {
-    }
 
     public int getCode() {
         return code;
@@ -33,5 +28,14 @@ public class ApiResponse {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    @Override
+    public String toString() {
+        return "DeletedPetDto{" +
+                "code=" + code +
+                ", type='" + type + '\'' +
+                ", message='" + message + '\'' +
+                '}';
     }
 }

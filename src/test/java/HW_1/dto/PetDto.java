@@ -1,33 +1,29 @@
-package dtos;
+package HW_1.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Pet {
-    private long id;
-    private Category category;
+public class PetDto {
+
+    private int id;
+    private CategoryDto category;
     private String name;
     private List<String> photoUrls;
-    private List<Tag> tags;
+    private List<TagDto> tags;
     private String status;
 
-    public Pet() {
-    }
-
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Category getCategory() {
+    public CategoryDto getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(CategoryDto category) {
         this.category = category;
     }
 
@@ -47,11 +43,11 @@ public class Pet {
         this.photoUrls = photoUrls;
     }
 
-    public List<Tag> getTags() {
+    public List<TagDto> getTags() {
         return tags;
     }
 
-    public void setTags(List<Tag> tags) {
+    public void setTags(List<TagDto> tags) {
         this.tags = tags;
     }
 
@@ -61,5 +57,17 @@ public class Pet {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "PetDto{" +
+                "id=" + id +
+                ", category=" + category +
+                ", name='" + name + '\'' +
+                ", photoUrls=" + photoUrls +
+                ", tags=" + tags +
+                ", status='" + status + '\'' +
+                '}';
     }
 }
