@@ -1,4 +1,4 @@
-package hw_3;
+package HW_2;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -8,26 +8,28 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static java.lang.Thread.sleep;
 
-public class Test1 {
+public class HotlineSearchTest {
 
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
 
         try {
-            String keyWordToFind = "iPhone";
+            String keyWordToFind = "iPhone 15";
 
             driver.manage().window().maximize();
-            driver.get("https://rozetka.com.ua/");
+            driver.get("https://hotline.ua/");
 
-            WebElement searchField = driver.findElement(By.cssSelector("[name='search']"));
+            WebElement searchField = driver.findElement(By.xpath("//*[@id=\"autosuggest\"]/div[1]/input"));
+            //WebElement searchField = driver.findElement(By.("[name='search']"));
             searchField.sendKeys(keyWordToFind);
 
-            WebElement searchButton = driver.findElement(By.cssSelector("[class*='search-form__submit']"));
+            WebElement searchButton = driver.findElement(By.cssSelector("[class*='search__btn']"));
             searchButton.click();
 
             sleep(3000);
 
-            WebElement iPhonePageTitle = driver.findElement(By.cssSelector("[class='catalog-heading']"));
+            //WebElement iPhonePageTitle = driver.findElement(By.className("[class='list-item']"));
+            WebElement iPhonePageTitle = driver.findElement(By.cssSelector("div[class^='search-list']"));
             String titleText = iPhonePageTitle.getText();
 
             Assert.assertTrue("Title doesn't contains " + keyWordToFind + " word.", titleText.contains(keyWordToFind));
@@ -40,3 +42,4 @@ public class Test1 {
     }
 
 }
+
