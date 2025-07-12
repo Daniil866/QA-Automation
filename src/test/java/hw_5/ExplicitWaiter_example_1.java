@@ -17,16 +17,16 @@ public class ExplicitWaiter_example_1 {
         driver.manage().window().maximize();
         driver.get("https://www.olx.ua/uk/");
 
-        WebElement searchField = driver.findElement(By.name("search"));
+        WebElement searchField = driver.findElement(new By.ById("search"));
         searchField.sendKeys("iPhone");
 
-        WebElement searchButton = driver.findElement(By.cssSelector("[class*='search-form__submit']"));
+        WebElement searchButton = driver.findElement(By.name("searchBtn"));
         searchButton.click();
 
         WebDriverWait waiter = new WebDriverWait(driver, Duration.ofSeconds(3));
-        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".catalog-heading")));
+        waiter.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[data-testid=\"listing-grid\"]")));
 
-        WebElement titleElement = driver.findElement(By.cssSelector(".catalog-heading"));
+        WebElement titleElement = driver.findElement(By.cssSelector("[data-testid=\"listing-grid\"]"));
 
         Assert.assertTrue(titleElement.isDisplayed());
 
