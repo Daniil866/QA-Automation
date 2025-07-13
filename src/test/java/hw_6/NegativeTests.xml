@@ -1,0 +1,7 @@
+<suite name="NegativeTests">
+    <test name="OnlyNegative">
+        <classes>
+            <class name="hw_6.practice.NegativeTests"/>
+        </classes>
+    </test>
+</suite>

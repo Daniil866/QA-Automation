@@ -1,0 +1,8 @@
+<suite name="PositiveTests">
+    <test name="OnlyPositive">
+        <classes>
+            <class name="hw_6.practice.PositiveTest1"/>
+            <class name="hw_6.practice.PositiveTest2"/>
+        </classes>
+    </test>
+</suite>

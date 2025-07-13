@@ -1,0 +1,7 @@
+<suite name="AllTests">
+    <test name="All">
+        <packages>
+            <package name="hw_6.practice"/>
+        </packages>
+    </test>
+</suite>
