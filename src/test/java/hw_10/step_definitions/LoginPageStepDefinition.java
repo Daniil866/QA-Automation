@@ -1,6 +1,6 @@
 package hw_10.step_definitions;
 
-import aqa_lecture_12.LoginPage;
+import hw_10.LoginPage;
 import io.cucumber.java.en.When;
 
 public class LoginPageStepDefinition {

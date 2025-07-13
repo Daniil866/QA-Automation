@@ -1,6 +1,6 @@
 package hw_10.step_definitions;
 
-import aqa_lecture_12.HomePage;
+import hw_10.HomePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 

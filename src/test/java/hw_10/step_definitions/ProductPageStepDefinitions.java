@@ -1,6 +1,6 @@
 package hw_10.step_definitions;
 
-import aqa_lecture_12.ProductPage;
+import hw_10.ProductPage;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
