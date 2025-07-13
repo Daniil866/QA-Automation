@@ -23,11 +23,8 @@ public class FluentWaiter {
                 .pollingEvery(Duration.ofSeconds(1))
                 .ignoring(NoSuchFieldError.class);
 
-        WebElement searchField = fluentWaiter.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.search-form.header-search-form input.quick-search-input[placeholder='Знайти...']")));
-        Thread.sleep(1000);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].value = 'iPad'; arguments[0].dispatchEvent(new Event('input'));", searchField);
-        Thread.sleep(1000);
-//        searchField.sendKeys(Keys.ENTER);
+        WebElement searchField = fluentWaiter.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div[class='header-bottom-in'] div[class='search-form header-search-form'] input[class='quick-search-input']")));
+        searchField.sendKeys("iPad", Keys.ENTER);
 //        WebElement searchButton = driver.findElement(By.cssSelector("[class='search-button-first-form']"));
 //        searchButton.click();
 
