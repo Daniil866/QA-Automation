@@ -1,4 +1,4 @@
-package HW_3;
+package hw_3;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -23,7 +23,7 @@ public class HotlineCheckContactsCSSTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.get("https://hotline.ua/");
+        driver.get("https://rozetka.com.ua/");
     }
 
     @After
@@ -39,7 +39,7 @@ public class HotlineCheckContactsCSSTest {
             WebElement contactsLink = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='/contacts/']")));
             contactsLink.click();
 
-            WebElement pageTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h1.page__title")));
+            WebElement pageTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h1.pages__h1")));
             String titleText = pageTitle.getText();
 
             Assert.assertTrue("Заголовок сторінки не 'Контакти'", titleText.contains("Контакти"));

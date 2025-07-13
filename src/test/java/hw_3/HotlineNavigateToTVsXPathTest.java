@@ -1,4 +1,4 @@
-package HW_3;
+package hw_3;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -22,8 +22,8 @@ public class HotlineNavigateToTVsXPathTest {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.get("https://hotline.ua/");
+        wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+        driver.get("https://rozetka.com.ua/");
     }
 
     @After
@@ -36,16 +36,16 @@ public class HotlineNavigateToTVsXPathTest {
     @Test
     public void navigateToTVsCategoryXPath() {
         try {
-            WebElement catalogMenuButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(@class, 'header__catalog-btn')]")));
+            WebElement catalogMenuButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(@data-testid, 'fat_menu_btn')]")));
             catalogMenuButton.click();
 
-            WebElement tvsCategoryLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[contains(@class, 'catalog-navigation__item')]//a[contains(text(), 'Телевізори')]")));
+            WebElement tvsCategoryLink = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[3]/a[contains(text(), 'Процесори')]")));
             tvsCategoryLink.click();
 
-            WebElement categoryTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(@class, 'page__title') and contains(text(), 'Телевізори')]")));
+            WebElement categoryTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(@class, 'catalog-heading') and contains(text(), 'Процесори')]")));
             String titleText = categoryTitle.getText();
 
-            Assert.assertTrue("Заголовок сторінки не 'Телевізори'", titleText.contains("Телевізори"));
+            Assert.assertTrue("Заголовок сторінки не 'Процесори'", titleText.contains("Процесори"));
             System.out.println("Test 'navigateToTVsCategoryXPath' passed. Found: " + titleText);
         } catch (AssertionError e) {
             System.err.println("Test 'navigateToTVsCategoryXPath' failed: " + e.getMessage());

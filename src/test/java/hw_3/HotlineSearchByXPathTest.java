@@ -1,4 +1,4 @@
-package HW_3;
+package hw_3;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -23,7 +23,7 @@ public class HotlineSearchByXPathTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.get("https://hotline.ua/");
+        driver.get("https://rozetka.com.ua/");
     }
 
     @After
@@ -37,13 +37,13 @@ public class HotlineSearchByXPathTest {
     public void searchForSamsungGalaxyXPath() {
         String keyWordToFind = "Samsung Galaxy S24";
         try {
-            WebElement searchField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='search']")));
+            WebElement searchField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@class, 'search-form__input')]")));
             searchField.sendKeys(keyWordToFind);
 
-            WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(@class, 'search__btn')]")));
+            WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(@class, 'button button_color_green button_size_medium search-form__submit')]")));
             searchButton.click();
 
-            WebElement searchResultsTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(@class, 'search-list__title')]")));
+            WebElement searchResultsTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(@class, 'catalog-heading')]")));
             String titleText = searchResultsTitle.getText();
 
             Assert.assertTrue("Заголовок не містить '" + keyWordToFind + "'", titleText.contains(keyWordToFind));

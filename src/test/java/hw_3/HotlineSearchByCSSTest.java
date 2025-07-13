@@ -23,7 +23,7 @@ public class HotlineSearchByCSSTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.get("https://hotline.ua/");
+        driver.get("https://rozetka.com.ua/");
     }
 
     @After
@@ -37,13 +37,13 @@ public class HotlineSearchByCSSTest {
     public void searchForHPProBookCSS() {
         String keyWordToFind = "HP ProBook 450 G10";
         try {
-            WebElement searchField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input#search")));
+            WebElement searchField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input.search-form__input.ng-untouched.ng-pristine.ng-valid")));
             searchField.sendKeys(keyWordToFind);
 
-            WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.search__btn")));
+            WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button.button.button_color_green.button_size_medium.search-form__submit")));
             searchButton.click();
 
-            WebElement searchResultsTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h1.search-list__title")));
+            WebElement searchResultsTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2.search-heading")));
             String titleText = searchResultsTitle.getText();
 
             Assert.assertTrue("Заголовок не містить '" + keyWordToFind + "'", titleText.contains(keyWordToFind));

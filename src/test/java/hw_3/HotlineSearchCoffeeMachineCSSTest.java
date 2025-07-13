@@ -23,7 +23,7 @@ public class HotlineSearchCoffeeMachineCSSTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.get("https://hotline.ua/");
+        driver.get("https://rozetka.com.ua/");
     }
 
     @After
@@ -40,10 +40,10 @@ public class HotlineSearchCoffeeMachineCSSTest {
             WebElement searchField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[name='search']")));
             searchField.sendKeys(keyWordToFind);
 
-            WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".search__btn")));
+            WebElement searchButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".search-form__submit")));
             searchButton.click();
 
-            WebElement searchResultsTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".search-list__title")));
+            WebElement searchResultsTitle = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".search-heading")));
             String titleText = searchResultsTitle.getText();
 
             Assert.assertTrue("Заголовок не містить '" + keyWordToFind + "'", titleText.contains(keyWordToFind));

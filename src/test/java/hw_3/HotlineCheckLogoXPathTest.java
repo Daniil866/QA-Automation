@@ -1,4 +1,4 @@
-package HW_3;
+package hw_3;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -23,7 +23,7 @@ public class HotlineCheckLogoXPathTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.get("https://hotline.ua/");
+        driver.get("https://rozetka.com.ua/");
     }
 
     @After
