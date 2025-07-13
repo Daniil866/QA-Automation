@@ -1,6 +1,6 @@
 package hw_6.practice;
 
-import hw_6.data_provider.SearchTestData;
+import data_provider.SearchTestData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;

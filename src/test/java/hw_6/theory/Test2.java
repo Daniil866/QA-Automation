@@ -1,4 +1,4 @@
-package hw_6.theory;
+package data_provider.theory;
 
 import org.testng.annotations.Test;
 

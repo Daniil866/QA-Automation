@@ -1,4 +1,4 @@
-package hw_6.theory.listeners;
+package data_provider.theory.Iisteners;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;

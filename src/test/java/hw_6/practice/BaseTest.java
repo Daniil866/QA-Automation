@@ -4,14 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
 import java.time.Duration;
 
 public class BaseTest {
 
     private WebDriver driver;
 
-    private static final String BASE_URL = "https://rozetka.com.ua/";
+    private static final String BASE_URL = "https://hotline.ua/";
 
     @BeforeMethod
     public void webDriverInit() {
@@ -22,11 +21,13 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void driverClose() {
-        driver.quit();
+    public void quitDriver() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
-    public WebDriver getDriver() {
+    protected WebDriver getDriver() {
         return driver;
     }
 

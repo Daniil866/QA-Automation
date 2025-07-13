@@ -1,6 +1,6 @@
-package hw_6.theory;
+package data_provider.theory;
 
-import hw_6.theory.listeners.Listener;
+import data_provider.theory.Iisteners.Listener;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
