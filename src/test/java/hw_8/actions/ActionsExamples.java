@@ -1,4 +1,4 @@
-package aqa_lecture_9.actions;
+package hw_8.actions;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
