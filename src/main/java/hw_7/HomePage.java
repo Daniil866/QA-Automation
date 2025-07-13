@@ -14,6 +14,8 @@ public class HomePage {
     private WebDriverWait waiter;
 
     private static final By GOODS_CATALOG_BUTTON = By.cssSelector("div.button-menu-main");
+//    private static final By LOGIN_PAGE_BUTTON = By.cssSelector("div.user-popover__item a[href='/ua/login/'], div.user-button__image svg use[href*='i-user']");
+    private static final By LOGIN_PAGE_BUTTON = By.cssSelector("div[class='user-button__image flex middle-xs center-xs']");
     private static final By GOODS_CATALOG_MENU = By.cssSelector("ul.menu-main__list");
     private static final By SEARCH_FIELD = By.cssSelector("[type='text']");
     private static final By SEARCH_BUTTON = By.cssSelector("button.search__btn");
@@ -27,8 +29,14 @@ public class HomePage {
         driver.findElement(GOODS_CATALOG_BUTTON).click();
     }
 
+    public void clickOnLoginButton(){driver.findElement(LOGIN_PAGE_BUTTON).click();};
+
+    public WebElement getLoginButton(){
+        return driver.findElement(LOGIN_PAGE_BUTTON);
+    }
+
     public WebElement getGoodsCatalogButton() {
-        return driver.findElement(GOODS_CATALOG_BUTTON); // твій селектор
+        return driver.findElement(GOODS_CATALOG_BUTTON);
     }
     public boolean isGoodsCatalogMenuDisplayed() {
         waiter.until(ExpectedConditions.visibilityOfElementLocated(GOODS_CATALOG_MENU));
