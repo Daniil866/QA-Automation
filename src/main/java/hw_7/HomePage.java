@@ -2,6 +2,7 @@ package hw_7;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -26,6 +27,9 @@ public class HomePage {
         driver.findElement(GOODS_CATALOG_BUTTON).click();
     }
 
+    public WebElement getGoodsCatalogButton() {
+        return driver.findElement(GOODS_CATALOG_BUTTON); // твій селектор
+    }
     public boolean isGoodsCatalogMenuDisplayed() {
         waiter.until(ExpectedConditions.visibilityOfElementLocated(GOODS_CATALOG_MENU));
         return driver.findElement(GOODS_CATALOG_MENU).isDisplayed();
@@ -38,5 +42,7 @@ public class HomePage {
     public void clickOnSearchButton() {
         driver.findElement(SEARCH_BUTTON).click();
     }
+
+    public WebElement getSearchButton(){ return driver.findElement(SEARCH_BUTTON);}
 
 }

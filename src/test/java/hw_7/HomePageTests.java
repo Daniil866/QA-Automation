@@ -2,34 +2,33 @@ package hw_7;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static java.lang.Thread.sleep;
-
-import hw_7.HomePage;
-import hw_7.SearchResultPage;
-import hw_7.ProductPage;
-
+import java.time.Duration;
 
 public class HomePageTests extends BaseTest {
 
     @Test
-    public void verifyPopUpIsDisplayedAfterClickingOnGoodsCatalogButton() throws InterruptedException {
+    public void verifyPopUpIsDisplayedAfterClickingOnGoodsCatalogButton() {
         HomePage homePage = new HomePage(getDriver());
 
-        sleep(5000);
-
+        WebDriverWait loadPage = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        loadPage.until(ExpectedConditions.elementToBeClickable(homePage.getGoodsCatalogButton()));
         homePage.clickOnGoodsCatalogButton();
 
         Assert.assertTrue(homePage.isGoodsCatalogMenuDisplayed());
     }
 
     @Test
-    public void verifyTitleOfSrpIsCorrectAccordingToEnteredSearchKeyWord() throws InterruptedException {
+    public void verifyTitleOfSrpIsCorrectAccordingToEnteredSearchKeyWord() {
         String wordToSearch = "iPhone";
 
         HomePage homePage = new HomePage(getDriver());
         homePage.enterTextIntoSearchField(wordToSearch);
-        sleep(3000);
+
+        WebDriverWait loadPage = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        loadPage.until(ExpectedConditions.elementToBeClickable(homePage.getGoodsCatalogButton()));
         homePage.clickOnSearchButton();
 
         SearchResultPage searchResultPage = new SearchResultPage(getDriver());
