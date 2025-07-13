@@ -1,4 +1,6 @@
 package hw_8_pages;
+import org.openqa.selenium.Keys;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 
@@ -10,9 +12,10 @@ public class HomePage {
     }
 
     public void clickOnSearchButton() {
-        $("div[class='qsr-block'] div[class='qsr-form'] input.qsr-submit, "+
-                    "div[class='header-bottom-in'] div[class='search-form header-search-form'] input[class='search-button-first-form']"
-                ).click();
+        //$("div[class='qsr-block'] div[class='qsr-form'] input.qsr-submit, "+
+        //            "div[class='header-bottom-in'] div[class='search-form header-search-form'] input[class='search-button-first-form']"
+        //        ).click();
+        $("div[class='header-bottom-in'] div[class='search-form header-search-form'] input[class='quick-search-input']").sendKeys(Keys.ENTER);
     }
 
     public void goToLoginPage() {
@@ -25,4 +28,6 @@ public class HomePage {
     public void inputPasswordText(String PasswordText) {
         $("form[class*='br-login-form modal-br-login-form'] input[class='input-field br-login-pass-field']").shouldBe(visible).setValue(PasswordText);
     }
+
+
 }

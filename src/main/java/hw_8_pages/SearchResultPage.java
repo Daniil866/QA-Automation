@@ -1,25 +1,26 @@
 package hw_8_pages;
 
+import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$$;
-import static java.time.Duration.ofSeconds;
 
 public class SearchResultPage {
 
-    private static final ElementsCollection PRODUCT_ELEMENTS = $$("div.list-item");
+    private static final ElementsCollection PRODUCT_ELEMENTS = $$("div.col-lg-3.product-wrapper")
+            .shouldHave(CollectionCondition.sizeGreaterThan(20));
 
     public String getProductName(int productIndex) {
-        SelenideElement product = PRODUCT_ELEMENTS.shouldHave(sizeGreaterThan(productIndex), ofSeconds(5)).get(productIndex - 1);
-        return product.$("[class='list-item__title-container m_b-5']").getText();
+        SelenideElement product = PRODUCT_ELEMENTS.get(PRODUCT_ELEMENTS.size() - productIndex);
+        return product.$("div.br-pp-desc").getText();
     }
 
     public void navigateToProduct(int productIndex) {
-        SelenideElement product = PRODUCT_ELEMENTS.get(productIndex - 1);
-        product.shouldBe(visible).$(".list-item__photo").click();
+        SelenideElement product = PRODUCT_ELEMENTS.get(PRODUCT_ELEMENTS.size() - productIndex);
+        String slug = product.getAttribute("data-slug");
+        product.shouldBe(clickable).$("a[href*='" + slug + "']").click();
     }
 
 }

@@ -24,16 +24,22 @@ public class HomePageTest extends BaseTest {
     }
 
     @Test
-    public void verifyTitleIsCorrect1() {
-        String wordToFind = "iPhone";
+    public void verifyTryLogin() {
+        String loginText = "+38(000)0000000";
+        String passText = "qwerty";
+        String ErrText = "Некоректний";
+        HomePage homePage = new HomePage();
 
-        $("input[type='text']").setValue(wordToFind);
-        sleep(3000);
-        $("button.search__btn").click();
+        homePage.goToLoginPage();
 
-        String searchedPageTitle = $("h1.catalog-title__main").shouldBe(visible).getText();
+        homePage.inputLoginText(loginText);
+        homePage.inputPasswordText(passText);
 
-        Assert.assertTrue(searchedPageTitle.contains(wordToFind));
+        $("button[class='br-login-submit']").shouldBe(visible).click();
+
+        String LoginTextError = $("div.login-error").shouldBe(visible).getText();
+
+        Assert.assertTrue(LoginTextError.contains(ErrText));
     }
 
 }
