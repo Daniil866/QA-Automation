@@ -2,17 +2,23 @@ package hw_9;
 
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import static com.codeborne.selenide.Selenide.open;
+import com.codeborne.selenide.Configuration;
 
 import static hw_9.TestRailController.publishData;
 
 public class BaseTest {
 
     protected int testCaseId;
+    private static final String BASE_URL = "https://brain.com.ua/";
 
-//    @BeforeMethod
-//    public void openBrowser() {
-//        Selenide.open("https://hotline.ua/");
-//    }
+    @BeforeMethod
+    public void openSite() {
+        open(BASE_URL);
+        Configuration.browser = "chrome";
+        Configuration.timeout = 10000;
+    }
 
     @AfterMethod
     public void publishResultsToTestRail(ITestResult result) {

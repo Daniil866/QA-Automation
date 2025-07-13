@@ -8,9 +8,9 @@ import static java.lang.String.format;
 public class TestRailController {
 
     private static final String RUN_ID = "1";
-    private final static String BASE_API_URL = "https://danschoolveselova.testrail.io/index.php?/api/v2/";
-    private static final String USER_EMAIL = "Ganna.veselova@gmail.com";
-    private static final String USER_PASSWORD = "annAVes123!@#$";
+    private final static String BASE_API_URL = "https://danschooldsolomchenko.testrail.io/index.php?/api/v2/";
+    private static final String USER_EMAIL = "d.solomchenko2020@gmail.com";
+    private static final String USER_PASSWORD = "wuL*Kbv$yQwPt7j";
     private static final String CREDENTIALS = Base64.getEncoder().encodeToString((USER_EMAIL + ":" + USER_PASSWORD).getBytes());
 
     public static void publishData(int statusId, int testCaseId) {
