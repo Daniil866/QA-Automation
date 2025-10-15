@@ -1,0 +1,231 @@
+:root {
+    --main-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --bg-light: #f8f9fa;
+    --bg-dark: #343a40;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+body {
+    padding: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--bg-dark);
+    line-height: 1.6;
+}
+
+h2 {
+    color: var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    padding-bottom: 10px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
+
+hr {
+    margin: 40px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+.block-exp, .float-box, .box, .disp, .clear-element, .position-box {
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.block-exp {
+    background-color: #e6f2ff;
+    border: 1px solid #b3d9ff;
+    margin: 15px 0;
+    padding: 15px;
+    width: 90%;
+    height: 60px;
+}
+
+.inline-exp {
+    background-color: #e6ffe6;
+    border: 1px solid #b3ffb3;
+    padding: 10px 15px;
+    margin: 15px 5px;
+    display: inline;
+    width: 200px; 
+    height: 50px;
+}
+
+.box {
+    margin: 15px;
+    padding: 20px;
+    border: 3px solid var(--secondary-color);
+    width: 250px;
+    height: 70px;
+    color: white;
+}
+
+.box-content {
+    box-sizing: content-box; 
+    background-color: var(--danger-color);
+}
+
+.box-border {
+    box-sizing: border-box; 
+    background-color: var(--success-color);
+}
+
+.disp {
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    width: 180px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    color: var(--bg-dark);
+    background: linear-gradient(135deg, #f0f0f0, #ccc);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.disp-block {
+    display: block; 
+}
+
+.disp-inline {
+    display: inline; 
+}
+
+.disp-inline-block {
+    display: inline-block; 
+}
+
+.float-container {
+    border: 2px dashed var(--main-color);
+    padding: 10px;
+    background-color: #fff;
+    overflow: auto;
+    border-radius: var(--border-radius);
+}
+
+.float-box {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: var(--warning-color);
+    text-align: center;
+    line-height: 100px;
+    color: var(--bg-dark);
+    float: left; 
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both; 
+}
+
+.clear-element {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px;
+    margin-top: 15px;
+    clear: both; 
+}
+
+.overflow-container {
+    width: 300px;
+    height: 100px;
+    border: 1px solid #bbb;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.overflow-hidden {
+    overflow: hidden; 
+    background-color: #ffebf0;
+}
+
+.overflow-scroll {
+    overflow: scroll; 
+    background-color: #ebf0ff;
+}
+
+.position-relative-parent {
+    border: 3px solid var(--main-color);
+    padding: 40px;
+    margin-bottom: 120px;
+    position: relative; 
+    height: 250px;
+    background-color: white;
+    border-radius: var(--border-radius);
+}
+
+.position-box {
+    width: 120px;
+    height: 60px;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    border: none;
+    margin: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.position-static {
+    background-color: #a8a8a8;
+}
+
+.position-relative {
+    position: relative;
+    top: 15px;
+    left: 15px; 
+    background-color: #00bcd4;
+}
+
+.position-absolute {
+    position: absolute;
+    top: 40px;
+    right: 40px; 
+    background-color: #e91e63;
+}
+
+.position-fixed {
+    position: fixed;
+    bottom: 30px;
+    right: 30px; 
+    z-index: 1000;
+    background-color: #ff9800;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.sticky-container {
+    height: 500px;
+    background-color: #f0f3f6;
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: var(--border-radius);
+}
+
+.position-sticky {
+    position: sticky;
+    top: 0; 
+    background-color: #4caf50;
+    color: white;
+    z-index: 50;
+    padding: 10px;
+    line-height: normal;
+    height: auto;
+    width: auto;
+    box-shadow: var(--shadow);
+}
