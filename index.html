@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Експерименти з Блоковою Моделлю</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+
+    <h2>2. Блокові vs Інлайнові елементи</h2>
+    <div class="block-exp">Це БЛОКОВИЙ елемент (div).</div>
+    <div class="block-exp">Це інший БЛОКОВИЙ елемент.</div>
+    <span class="inline-exp">Це ІНЛАЙНОВИЙ елемент (span).</span>
+    <span class="inline-exp">Це інший ІНЛАЙНОВИЙ елемент.</span>
+
+    <hr>
+
+    <h2>4. Властивості `display` та `box-sizing`</h2>
+    <div class="box box-content">content-box</div>
+    <div class="box box-border">border-box</div>
+    
+    <span class="disp disp-block">display: block</span>
+    <span class="disp disp-inline">display: inline</span>
+    <span class="disp disp-inline-block">display: inline-block</span>
+    
+    <hr>
+
+    <h2>5. `float` та `clear`</h2>
+    <div class="float-container">
+        <div class="float-box float-left">Float Left 1</div>
+        <div class="float-box float-left">Float Left 2</div>
+        <div class="float-box float-left">Float Left 3</div>
+        <div class="clearfix"></div> 
+        <div class="clear-element">Цей елемент використовує clear.</div>
+    </div>
+    
+    <hr>
+
+    <h2>6. `overflow`</h2>
+    <div class="overflow-container overflow-hidden">
+        <h3>Hidden</h3>
+        <p>Багато тексту, що не вміщається. Частина його буде прихована, бо задано overflow: hidden. Текст, текст, текст, текст, текст, текст, текст, текст.</p>
+    </div>
+    <div class="overflow-container overflow-scroll">
+        <h3>Scroll</h3>
+        <p>Багато тексту, що не вміщається. Буде відображена смуга прокрутки, бо задано overflow: scroll. Текст, текст, текст, текст, текст, текст, текст, текст, текст, текст.</p>
+    </div>
+    
+    <hr>
+
+    <h2>7. Позиціонування `position`</h2>
+    <div class="position-relative-parent">
+        Батьківський елемент з `position: relative`
+        <div class="position-box position-static">Static</div>
+        <div class="position-box position-relative">Relative</div>
+        <div class="position-box position-absolute">Absolute</div>
+    </div>
+    
+    <div class="sticky-container">
+        <div class="position-box position-sticky">Sticky</div>
+        <p>Прокрутіть вниз, щоб побачити ефект 'sticky'...</p>
+        <p>...продовження контенту...</p>
+        <p>...продовження контенту...</p>
+        <p>...продовження контенту...</p>
+        <p>...продовження контенту...</p>
+        <p>...продовження контенту...</p>
+    </div>
+
+    <div class="position-box position-fixed">Fixed</div>
+
+</body>
+</html>
