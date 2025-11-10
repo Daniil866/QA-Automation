@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS: Проста Картка Товару</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Додаткові стилі для демонстрації: застосування тіні до картки */
+        .product-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+
+    <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Демонстрація Картки Товару на Tailwind CSS</h1>
+
+    <div class="max-w-4xl mx-auto">
+
+        <div class="product-card bg-white rounded-xl shadow-2xl overflow-hidden
+                    md:flex md:max-w-3xl">
+            
+            <div class="md:shrink-0">
+                <img class="h-64 w-full object-cover md:h-full md:w-64"
+                     src="https://via.placeholder.com/600x900/4F46E5/FFFFFF?text=Product+Image"
+                     alt="Стильні бездротові навушники">
+            </div>
+
+            <div class="p-8 flex flex-col justify-between">
+                <div>
+                    <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Новинка 2024</div>
+                    <a href="#" class="block mt-1 text-2xl leading-tight font-medium text-black hover:text-indigo-600">
+                        Бездротові Навушники X9 Pro
+                    </a>
+                    <p class="mt-2 text-gray-500">
+                        Отримайте до 40 годин відтворення музики та неймовірний, чистий звук. Ідеальний вибір для роботи та відпочинку.
+                    </p>
+                    
+                    <div class="mt-4 flex items-center">
+                        <span class="text-yellow-500 text-lg">★★★★★</span>
+                        <span class="ml-2 text-sm text-gray-600">(4.9 / 128 відгуків)</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex justify-between items-center">
+                    <div class="text-4xl font-extrabold text-gray-900">
+                        $99<span class="text-xl font-normal text-gray-400 line-through ml-2">$149</span>
+                    </div>
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-full
+                                   transition duration-300 shadow-lg hover:shadow-xl">
+                        Купити
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-10 p-6 bg-indigo-50 rounded-lg text-indigo-700">
+            <h3 class="font-bold mb-2">💡 Принцип Адаптивності (Responsive):</h3>
+            <p>На **малих екранах** (мобільні) макет стає **вертикальним** (зображення зверху, контент знизу) завдяки типовій поведінці Flex/Grid.</p>
+            <p>На **середніх екранах** (`md:` breakpoint) і більше, активуються класи <code>md:flex</code> та <code>md:max-w-3xl</code>, які розміщують зображення та контент **горизонтально**.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
